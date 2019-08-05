@@ -98,16 +98,12 @@ var _enter = function(d){
 
 	_drawAxis(d)
 	
-	const annotationData = _(data)
-    				.chain()
-    				.map(d => { return {
-					            note: {Max_pop_Age_group: d.age},
-					            x:xScale(d3.max(d, function(d) { return d.age; })),
-						    y:yScale(graph.metric),
-					     	    dx : 20,
-						    dy : 0,
-					  } })
-				.value();
+	const annotationData = [{
+				note: {Max_pop_Age_group: d.age},
+				x:xScale(d3.max(d, function(d) { return d.age; })),
+				y:yScale(graph.metric),
+				dx : 20,
+				dy : 0 }]
     const makeannotations = d3.annotation()
     			.type(annotationLabel)
 	  		.annotations(annotationData);
