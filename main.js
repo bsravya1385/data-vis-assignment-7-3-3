@@ -104,12 +104,9 @@ var _enter = function(d){
 				y:graph.yScale(graph.metric),
 				dx : 20,
 				dy : 0 }]
-    const makeannotations = d3.annotation()
-    			.type(d3.annotationCallout)
-	  		.annotations(annotations);
+    const makeannotations = d3.annotation().type(d3.annotationCallout).annotations(annotations)
 
-  svg.append('g')
-	  .call(makeannotations);
+  svg.append('g').call(makeannotations);
 }
 
 // _updatePhase will run every time the graph is redrawn
