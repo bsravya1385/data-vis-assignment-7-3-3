@@ -97,6 +97,23 @@ var _enter = function(d){
 	});
 
 	_drawAxis(d)
+	
+	const annotationData = _(data)
+    				.chain()
+    				.map(d => { return {
+					            Note: {Max population Age group: d.age},
+					            x:xScale(d3.max(d, function(d) { return d.age; })),
+						    y:yScale(this.metric),
+					     	    dx : 20,
+						    dy : 0,
+					  } })
+				.value();
+    const makeannotations = annotation()
+    			.type(annotationLabel),
+	  		.annotations(annotationData);
+
+  svg.append('g')
+	  .call(makeannotations);
 }
 
 // _updatePhase will run every time the graph is redrawn
@@ -149,5 +166,7 @@ d3.json("dataset.json", function(d){
 	document.getElementById("female").addEventListener('click',function(){
 		render(d, "females");
 	})
+	
+	
 	
 });
