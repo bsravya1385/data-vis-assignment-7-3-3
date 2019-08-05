@@ -51,16 +51,13 @@ var _drawAxis = function(d) {
 	.attr("transform", "translate(" + graph.container.xOffset + ",275)")
 	.call(graph.xAxis); 
 	
-	graph.append("text") 
+	graph.container.svg.append("text") 
 		.attr("text-anchor", "middle") 
-	// this makes it easy to centre the text as the transform is applied to the anchor 
 		.attr("transform", "translate("+ (padding/2) +","+(height/2)+")rotate(-90)") 
-	// text is drawn off the screen top left, move down and out and rotate 
 		.text("Population"); 
-	graph.append("text") .attr("text-anchor", "middle") 
-	// this makes it easy to centre the text as the transform is applied to the anchor 
+	graph.container.svg.append("text")
+		.attr("text-anchor", "middle") 
 		.attr("transform", "translate("+ (width/2) +","+(height-(padding/3))+")") 
-	// centre below axis 
 		.text("Age");
 
 } 
