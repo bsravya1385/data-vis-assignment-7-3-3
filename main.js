@@ -131,7 +131,7 @@ var render = function(d, m){
 	_exit();
 }
 
-d3.json("age.json", function(d){
+d3.json("dataset.json", function(d){
 	// create our svg element on the page
 	graph.container.svg = d3.select("#graph").append('svg')
 	.attr("height", graph.container.height)
