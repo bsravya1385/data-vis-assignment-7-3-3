@@ -105,8 +105,8 @@ var _enter = function(d){
 				dx : 20,
 				dy : 0 }]
     const makeannotations = d3.annotation()
-    			.type(annotationLabel)
-	  		.annotations(annotationData);
+    			.type(d3.annotationCallout)
+	  		.annotations(annotations);
 
   svg.append('g')
 	  .call(makeannotations);
