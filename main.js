@@ -100,8 +100,8 @@ var _enter = function(d){
 	
 	const annotationData = [{
 				note: {Max_pop_Age_group: d.age},
-				x:xScale(d3.max(d, function(d) { return d.age; })),
-				y:yScale(graph.metric),
+				x:graph.xScale(d3.max(d, function(d) { return d.age; })),
+				y:graph.yScale(graph.metric),
 				dx : 20,
 				dy : 0 }]
     const makeannotations = d3.annotation()
