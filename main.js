@@ -4,7 +4,8 @@ var graph = {
 		xOffset: 60, 
 		yOffset: 0, 
 		height: 600, 
-		width: 800
+		width: 800,
+		padding: 100
 	}, 
 	rects: null, 
 	xScale: null, 
@@ -44,18 +45,24 @@ var _drawAxis = function(d) {
 	graph.container.svg.selectAll("g").data(d).enter()
 	.append("g")
 	.attr("transform", "translate(" + graph.container.xOffset + "," + graph.container.yOffset + ")")
-	.call(graph.yAxis)
-	.append("text")
-        .attr("transform", "rotate(-90)")
-        .style("text-anchor", "end")
-        .text("Population");
+	.call(graph.yAxis);
 
 	graph.container.svg.append("g")
 	.attr("transform", "translate(" + graph.container.xOffset + ",275)")
-	.call(graph.xAxis)
-	.append("text")
-	.style("text-anchor", "end")
-        .text("Age"); 
+	.call(graph.xAxis); 
+	
+	graph.append("text") 
+		.attr("text-anchor", "middle") 
+	// this makes it easy to centre the text as the transform is applied to the anchor 
+		.attr("transform", "translate("+ (padding/2) +","+(height/2)+")rotate(-90)") 
+	// text is drawn off the screen top left, move down and out and rotate 
+		.text("Population"); 
+	graph.append("text") .attr("text-anchor", "middle") 
+	// this makes it easy to centre the text as the transform is applied to the anchor 
+		.attr("transform", "translate("+ (width/2) +","+(height-(padding/3))+")") 
+	// centre below axis 
+		.text("Age");
+
 } 
 
 // _initPhase is going to set the metric, scales, domains, and axis
