@@ -46,15 +46,16 @@ var _drawAxis = function(d) {
 	.attr("transform", "translate(" + graph.container.xOffset + "," + graph.container.yOffset + ")")
 	.call(graph.yAxis)
 	.append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Population");
+        .attr("transform", "rotate(-90)")
+        .style("text-anchor", "end")
+        .text("Population");
 
 	graph.container.svg.append("g")
 	.attr("transform", "translate(" + graph.container.xOffset + ",275)")
-	.call(graph.xAxis); 
+	.call(graph.xAxis)
+	.append("text")
+	.style("text-anchor", "end")
+        .text("Age"); 
 } 
 
 // _initPhase is going to set the metric, scales, domains, and axis
