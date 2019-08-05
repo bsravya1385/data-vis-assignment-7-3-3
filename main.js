@@ -108,7 +108,7 @@ var _enter = function(d){
 						    dy : 0,
 					  } })
 				.value();
-    const makeannotations = annotation()
+    const makeannotations = d3.annotation()
     			.type(annotationLabel),
 	  		.annotations(annotationData);
 
