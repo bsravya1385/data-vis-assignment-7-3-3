@@ -106,7 +106,7 @@ var _enter = function(d){
 				dy : 0 }]
     const makeannotations = d3.annotation().type(d3.annotationLabel).annotations(annotations)
 
-  svg.append('g').call(makeannotations)
+  graph.container.svg.append('g').call(makeannotations)
 }
 
 // _updatePhase will run every time the graph is redrawn
