@@ -111,7 +111,7 @@ var _enter = function(d){
 				y:graph.yScale(graph.metric),
 				dx : 20,
 				dy : 0 }]
-    const makeannotations = d3.annotation().type(d3.annotationLabel).annotations(annotations)
+    const makeAnnotations = d3.annotation().type(d3.annotationLabel).annotations(annotations)
 
   //graph.container.svg.append('g').call(makeannotations)
     d3.select("svg").append("g")
