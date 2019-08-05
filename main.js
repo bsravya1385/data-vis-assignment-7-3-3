@@ -109,7 +109,7 @@ var _enter = function(d){
 					  } })
 				.value();
     const makeannotations = d3.annotation()
-    			.type(annotationLabel),
+    			.type(annotationLabel)
 	  		.annotations(annotationData);
 
   svg.append('g')
