@@ -98,15 +98,15 @@ var _enter = function(d){
 
 	_drawAxis(d)
 	
-	const annotations = [{
-				note: {Max_pop_Age_group: d.age},
-				x:graph.xScale(d3.max(d, function(d) { return d.age; })),
-				y:graph.yScale(graph.metric),
-				dx : 20,
-				dy : 0 }]
-    const makeannotations = d3.annotation().type(d3.annotationLabel).annotations(annotations)
+	//const annotations = [{
+				//note: {Max_pop_Age_group: d.age},
+				//x:graph.xScale(d3.max(d, function(d) { return d.age; })),
+				//y:graph.yScale(graph.metric),
+				//dx : 20,
+				//dy : 0 }]
+    //const makeannotations = d3.annotation().type(d3.annotationLabel).annotations(annotations)
 
-  graph.container.svg.append('g').call(makeannotations)
+  //graph.container.svg.append('g').call(makeannotations)
 }
 
 // _updatePhase will run every time the graph is redrawn
