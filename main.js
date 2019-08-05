@@ -50,14 +50,6 @@ var _drawAxis = function(d) {
 	.attr("transform", "translate(" + graph.container.xOffset + ",275)")
 	.call(graph.xAxis); 
 	
-	graph.container.svg.append("text") 
-		.attr("text-anchor", "middle") 
-		.attr("transform", "translate("+  +","+(height/2)+")rotate(-90)") 
-		.text("Population"); 
-	graph.container.svg.append("text")
-		.attr("text-anchor", "middle") 
-		.attr("transform", "translate("+ (width/2) +","+(height)+")") 
-		.text("Age");
 
 } 
 
