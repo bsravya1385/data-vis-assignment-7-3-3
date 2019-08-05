@@ -101,9 +101,9 @@ var _enter = function(d){
 	const annotationData = _(data)
     				.chain()
     				.map(d => { return {
-					            Note: {Max population Age group: d.age},
+					            note: {Max population Age group: d.age},
 					            x:xScale(d3.max(d, function(d) { return d.age; })),
-						    y:yScale(this.metric),
+						    y:yScale(graph.metric),
 					     	    dx : 20,
 						    dy : 0,
 					  } })
