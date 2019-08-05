@@ -1,8 +1,8 @@
 .bar {
-	fill: red;	
+	fill: blue;	
 }
 .bar:hover {
-	fill: blue;
+	fill: orange;
 }
 
 .tooltip {
