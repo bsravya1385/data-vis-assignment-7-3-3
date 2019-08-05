@@ -4,8 +4,7 @@ var graph = {
 		xOffset: 60, 
 		yOffset: 0, 
 		height: 600, 
-		width: 800,
-		padding: 100
+		width: 800
 	}, 
 	rects: null, 
 	xScale: null, 
@@ -53,11 +52,11 @@ var _drawAxis = function(d) {
 	
 	graph.container.svg.append("text") 
 		.attr("text-anchor", "middle") 
-		.attr("transform", "translate("+ (padding/2) +","+(height/2)+")rotate(-90)") 
+		.attr("transform", "translate("+  +","+(height/2)+")rotate(-90)") 
 		.text("Population"); 
 	graph.container.svg.append("text")
 		.attr("text-anchor", "middle") 
-		.attr("transform", "translate("+ (width/2) +","+(height-(padding/3))+")") 
+		.attr("transform", "translate("+ (width/2) +","+(height)+")") 
 		.text("Age");
 
 } 
